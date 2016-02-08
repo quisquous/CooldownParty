@@ -16,7 +16,6 @@ UI.OnFrame = function(ticks)
 	
 	local t = math.ceil((TempLastTick - ticks) / 1000 + TempCooldown)
 	GlobalIcon:SetTime(t)
-	GlobalText.Text = tostring(t)
 end
 
 CooldownIcon = {}
@@ -188,6 +187,7 @@ function ProcessEvents(ticks)
 			if event.SkillID == 150 then
 				TempLastTick = ticks
 			end
+			GlobalText.Text = tostring(event.SkillID)
 		end
 	end
 end
