@@ -97,6 +97,15 @@ _Cooldowns = {
 			ShowInCombat = false,
 		},
 	},
+	Ast = {
+		{
+			Name = "Swiftcast",
+			ID = 150,
+			Recast = 60,
+			Icon = "000000/000461.png",
+			ShowInCombat = true,
+		},
+	},
 	Mnk = {
 		{
 			Name = "Invigorate",
@@ -119,6 +128,101 @@ _Cooldowns = {
 			Recast = 80,
 			Icon = "000000/000309.png",
 			ShowInCombat = false,
+		},
+	},
+	Nin = {
+		{
+			Name = "Invigorate",
+			ID = 80,
+			Recast = 120,
+			Icon = "000000/000302.png",
+			ShowInCombat = true,
+			Shame = true,
+		},
+		{
+			Name = "Goad",
+			ID = 2249,
+			Recast = 180,
+			Icon = "000000/000610.png",
+			ShowInCombat = true,
+		},
+	},
+	War = {
+		{
+			Name = "Provoke",
+			ID = 18,
+			Recast = 40,
+			Icon = "000000/000165.png",
+			ShowInCombat = true,
+		},
+		{
+			Name = "Holmgang",
+			ID = 43,
+			Recast = 180,
+			Icon = "000000/000266.png",
+			ShowInCombat = true,
+		},
+	},
+	Pld = {
+		{
+			Name = "Provoke",
+			ID = 18,
+			Recast = 40,
+			Icon = "000000/000165.png",
+			ShowInCombat = true,
+		},
+		{
+			Name = "Hallowed Ground",
+			ID = 30,
+			Recast = 180,
+			Icon = "002000/002502.png",
+			ShowInCombat = true,
+		},
+	},
+	Drk = {
+		{
+			Name = "Provoke",
+			ID = 18,
+			Recast = 40,
+			Icon = "000000/000165.png",
+			ShowInCombat = true,
+		},
+		{
+			Name = "Living Dead",
+			ID = 43,
+			Recast = 3638,
+			Icon = "003000/003077.png",
+			ShowInCombat = true,
+		},
+	},
+	Mch = {
+		{
+			Name = "Invigorate",
+			ID = 80,
+			Recast = 120,
+			Icon = "000000/000302.png",
+			ShowInCombat = true,
+			Shame = true,
+		},
+	},
+	Brd = {
+		{
+			Name = "Invigorate",
+			ID = 80,
+			Recast = 120,
+			Icon = "000000/000302.png",
+			ShowInCombat = true,
+			Shame = true,
+		},
+	},
+	Drg = {
+		{
+			Name = "Invigorate",
+			ID = 80,
+			Recast = 120,
+			Icon = "000000/000302.png",
+			ShowInCombat = true,
+			Shame = true,
 		},
 	},
 }
