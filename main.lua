@@ -266,6 +266,9 @@ end
 
 function ProcessEvents(ticks)
 	local player = FF.GetPlayer()
+	if player == nil then
+		return
+	end
 
 	-- Hack player in for now before finding party list
 	if player and PlayerTrackers[player.ID] == nil then
