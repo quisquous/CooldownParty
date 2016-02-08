@@ -232,7 +232,8 @@ end
 
 function PlayerTracker:_MakeIcon(skill, x, y)
 	local iconFolder = "Icons/"
-	local icon = CooldownIcon:new(iconFolder .. skill.Icon, x, y, self._W, self._H, skill.Shame)
+	local shame = false -- TODO: use skill.Shame once updates take "in combat" into account
+	local icon = CooldownIcon:new(iconFolder .. skill.Icon, x, y, self._W, self._H, shame)
 	return icon
 end
 
