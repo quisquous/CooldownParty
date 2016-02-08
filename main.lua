@@ -1,12 +1,22 @@
 ﻿PlayerMap = {}
 Icons = {}
 
+GlobalIcon = {}
+GlobalText = {}
+
+TempLastTick = 0
+TempCooldown = 60
+
 UI.OnLoad = function()
 	Initialize()
 end
 
 UI.OnFrame = function(ticks)
 	ProcessEvents(ticks)
+	
+	local t = math.ceil((TempLastTick - ticks) / 1000 + TempCooldown)
+	GlobalIcon:SetTime(t)
+	GlobalText.Text = tostring(t)
 end
 
 CooldownIcon = {}
@@ -152,17 +162,32 @@ function CooldownIcon:Hide()
 end
 
 function Initialize()
-	icon = CooldownIcon:new(nil, "Icons/000000/000461.png", 100, 100, 40, 40)
-	icon:Show()
+	GlobalIcon = CooldownIcon:new(nil, "Icons/000000/000461.png", 100, 100, 40, 40)
+	GlobalIcon:Show()
+	
+	GlobalText = UI.NewLabel('High')
+	GlobalText.FontSize = 12
+	GlobalText.X = 20
+	GlobalText.Y = 300
+	GlobalText.Width = 500
+	GlobalText.Height = 500
+	GlobalText.Color = "#FFFFFFFF"
+	GlobalText.FontFamily = "Sansation"
+	GlobalText.FontWeight = 200
+	GlobalText.Text = "foobar"
+	GlobalText:Show()
 end
 
 function ProcessEvents(ticks)
+	local player = FF.GetPlayer()
 	local combatEvents = FF.GetAllCombatEvents()
 	local i
 	for i = 0, combatEvents.Length - 1 do
-		if combatEvents[i].MessageType == "SingleAbility" and combatEvents[i].SkillID == 166 then
-			--startTicks = ticks
-			--aetherflowRecast = 60000
+		local event = combatEvents[i]
+		if event.ActorID == player.ID and event.MessageType == "SingleAbility" then
+			if event.SkillID == 150 then
+				TempLastTick = ticks
+			end
 		end
 	end
 end
